@@ -1,6 +1,7 @@
 ---
 - hosts: all
-  gather_facts: false
+  gather_facts: true
+#  gather_facts: false
   connection: local
 
   
@@ -15,7 +16,8 @@
     - name: copy Running config to backup folder
       copy:
         content: "{{ ios_cmd.stdout[0] }}"
-        dest: "/etc/ansible/backup/labs/{{ ansible_host }}.conf"
+        dest: "/etc/ansible/{{ lookup('env','PROJECT_NAME') }}/{{ ansible_host }}.conf"
+#        dest: "/etc/ansible/backup/labs/{{ ansible_host }}.conf"
 
     - name: Add files to Git staging area, commit and push
       shell: |
@@ -23,6 +25,6 @@
         git commit -m "Configuration Backup"
         git push origin
       args:
-        chdir: "/etc/ansible/backup/labs/"
+        chdir: "/etc/ansible/"
       delegate_to: localhost
       run_once: yes

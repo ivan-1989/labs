@@ -21,7 +21,6 @@
       copy:
         content: "{{ ios_cmd.stdout[0] }}"
         dest: "/etc/ansible/{{ lookup('env','PROJECT_NAME') }}/{{ ansible_net_hostname }}.conf"
-#        dest: "/etc/ansible/backup/labs/{{ ansible_host }}.conf"
 
     - name: Add files to Git staging area, commit and push
       shell: |

@@ -20,11 +20,9 @@ RUN git clone https://github.com/ivan-1989/labs.git /etc/ansible/
 
 RUN git remote set-url origin  git@github.com:ivan-1989/labs.git
 
+#########################################################################
 #RUN git clone git@github.com:ivan-1989/labs.git /etc/ansible/
-
 #RUN git clone https://github.com/ivan-1989/ansible.git /etc/ansible
-
-
 
 #VOLUME /etc/ansible/backups/labs
 

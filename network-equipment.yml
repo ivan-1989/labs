@@ -1,7 +1,7 @@
 ---
 - hosts: all
-  gather_facts: true
-#  gather_facts: false
+#  gather_facts: true
+  gather_facts: false
   connection: local
 
   
@@ -13,10 +13,14 @@
         commands: show running-config
       register: ios_cmd
 
+    - name: Gather facts (ios)
+      cisco.ios.ios_facts:
+      when: ansible_network_os == 'ios'
+
     - name: copy Running config to backup folder
       copy:
         content: "{{ ios_cmd.stdout[0] }}"
-        dest: "/etc/ansible/{{ lookup('env','PROJECT_NAME') }}/{{ ansible_host }}.conf"
+        dest: "/etc/ansible/{{ lookup('env','PROJECT_NAME') }}/{{ ansible_net_hostname }}.conf"
 #        dest: "/etc/ansible/backup/labs/{{ ansible_host }}.conf"
 
     - name: Add files to Git staging area, commit and push

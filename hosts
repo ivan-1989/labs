@@ -1,12 +1,12 @@
 [ios]
 
-10.0.0.7 ansible_user=admin ansible_network_os=ios
-10.0.0.2  ansible_user=admin ansible_network_os=ios  
-10.0.0.8  ansible_user=admin ansible_network_os=ios 
-10.0.0.9  ansible_user=admin ansible_network_os=ios 
-10.0.0.12 ansible_user=admin ansible_network_os=ios 
-10.0.0.13 ansible_user=admin ansible_network_os=ios 
-10.0.0.15 ansible_user=admin ansible_network_os=ios
+10.0.0.1 ansible_user=admin ansible_network_os=ios ansible_connection=network_cli 
+10.0.0.7 ansible_user=admin ansible_network_os=ios ansible_connection=network_cli 
+10.0.0.3  ansible_user=admin ansible_network_os=ios ansible_connection=network_cli  
+10.0.0.4  ansible_user=admin ansible_network_os=ios  ansible_connection=network_cli 
+10.0.0.6  ansible_user=admin ansible_network_os=ios ansible_connection=network_cli 
+10.0.0.5 ansible_user=admin ansible_network_os=ios ansible_connection=network_cli 
+
 
 
 #gw2 ansible_host=10.0.0.2 ansible_ssh_pass=admin ansible_user=admin ansible_connection=network_cli ansible_network_os=ios

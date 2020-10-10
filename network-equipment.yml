@@ -2,7 +2,7 @@
 - hosts: all
 #  gather_facts: true
   gather_facts: false
-  connection: network_cli
+  connection: local
 
   
   tasks:

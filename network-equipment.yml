@@ -33,14 +33,14 @@
       delegate_to: localhost
       run_once: yes
    
-    - name: run show commands
-      ansible.netcommon.telnet:
-        user: admin
-        password: admin
-        login_prompt: 'Username: '
-        prompts:
-        - '[>#]'
-        command:
-        - terminal length 0
-        - show running-config
-        register: output
+#    - name: run show commands
+#      ansible.netcommon.telnet:
+#        user: admin
+#        password: admin
+#        login_prompt: 'Username: '
+#        prompts:
+#        - '[>#]'
+#        command:
+#        - terminal length 0
+#        - show running-config
+#        register: output

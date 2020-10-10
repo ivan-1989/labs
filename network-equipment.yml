@@ -4,14 +4,14 @@
   connection: local
 
   tasks:
-   - name: show run 
-   ios_command:
-   commands:
-     - show run 
-     host: "{{ ansible_host }}"
-     username: user
-     password: user
-     register: config
+  - name: show run 
+    ios_command:
+      commands:
+        - show run 
+        host: "{{ ansible_host }}"
+        username: user
+        password: user
+        register: config
 
   - name: save output to /etc/ansible/backups 
     copy: 

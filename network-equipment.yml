@@ -14,7 +14,7 @@
       register: ios_cmd
 
     - name: Gather facts (ios)
-      cisco.ios.ios_facts:
+#      cisco.ios.ios_facts:
       when: ansible_network_os == 'ios'
 
     - name: copy Running config to backup folder

@@ -2,7 +2,7 @@
 - hosts: all
 #  gather_facts: true
   gather_facts: false
-  connection: local
+  connection: network_cli
 
   
   tasks:
@@ -11,10 +11,7 @@
     - name: Get show running
       ios_command:
         commands: show running-config
-        host: "{{ ansible_host }}"
-        username: user
-        password: user
-      register: config
+      register: ios_cmd
 
 #    - name: Gather facts (ios)
     - ios_facts:
